@@ -1,6 +1,6 @@
-export const IconeCasa = (
+export const IconeCasa = (tamanho = 6) => (
   <svg
-    className="w-6 h-6"
+    className={`w-${tamanho} h-${tamanho}`}
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -16,9 +16,9 @@ export const IconeCasa = (
   </svg>
 );
 
-export const IconeEngrenagem = (
+export const IconeEngrenagem = (tamanho = 6) => (
   <svg
-    className="w-6 h-6"
+    className={`w-${tamanho} h-${tamanho}`}
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -40,9 +40,9 @@ export const IconeEngrenagem = (
   </svg>
 );
 
-export const IconeSino = (
+export const IconeSino = (tamanho = 6) => (
   <svg
-    className="w-6 h-6"
+    className={`w-${tamanho} h-${tamanho}`}
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -58,9 +58,9 @@ export const IconeSino = (
   </svg>
 );
 
-export const IconeSair = (
+export const IconeSair = (tamanho = 6) => (
   <svg
-    className="w-6 h-6"
+    className={`w-${tamanho} h-${tamanho}`}
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -76,9 +76,9 @@ export const IconeSair = (
   </svg>
 );
 
-export const IconeEstudos = (
+export const IconeEstudos = (tamanho = 6) => (
   <svg
-    className="w-6 h-6"
+    className={`w-${tamanho} h-${tamanho}`}
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -92,6 +92,41 @@ export const IconeEstudos = (
       strokeLinejoin="round"
       strokeWidth={2}
       d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+    />
+  </svg>
+);
+export const IconeWarning = (tamanho = 6) => (
+  <svg
+    className="w-6 h-6"
+    data-darkreader-inline-stroke=""
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+    />
+  </svg>
+);
+
+export const IconeLogin = (tamanho = 6) => (
+  <svg
+    className="w-6 h-6"
+    data-darkreader-inline-stroke=""
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
     />
   </svg>
 );

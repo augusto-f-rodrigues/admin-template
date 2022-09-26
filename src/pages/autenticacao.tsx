@@ -1,21 +1,32 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import AuthInput from "../components/auth/AuthInput";
+import { IconeWarning } from "../components/icons";
 import Button from "../components/templates/Button";
 import Titulo from "../components/templates/Titulo";
 
 export default function Autorizacao() {
   const [modo, setModo] = useState<"login" | "cadastro">("login");
 
+  const [erro, setErro] = useState(null);
+
   const [email, setEmail] = useState("");
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
 
+  function exibirErro(msg, tempoEmSegundos = 5) {
+    setErro(msg)
+    setTimeout(()=> setErro(null), tempoEmSegundos * 1000)
+  }
+
   function submeter() {
     if (modo === "login") {
       console.log("login");
+      exibirErro("Informações incorretas de login")
     } else {
       console.log("cadastrar");
+      exibirErro("Informações incorretas de cadastro")
     }
   }
 
@@ -37,6 +48,16 @@ export default function Autorizacao() {
               : "Preencha as informações para se cadastrar"
           }
         />
+
+        {erro ? (
+          <div className="flex mt-8 mb-8 p-4 bg-red-500 text-white font-semibold border border-red-800 outline-none rounded-lg items-center">
+            {IconeWarning()}
+            <p className="ml-2">{erro}</p>
+          </div>
+        ) : (
+          false
+        )}
+
         <hr className="mt-3 mb-3" />
         {modo === "cadastro" ? (
           <AuthInput
@@ -47,7 +68,7 @@ export default function Autorizacao() {
             obrigatorio={true}
           />
         ) : (
-          <></>
+          false
         )}
 
         <AuthInput
@@ -110,6 +131,15 @@ export default function Autorizacao() {
             </a>
           </p>
         )}
+
+        <Link href={"/"}>
+          <a
+            className="flex flex-row items-center justify-center w-full bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
+            onClick={submeter}
+          >
+            Voltar para Homepage
+          </a>
+        </Link>
       </div>
     </div>
   );
