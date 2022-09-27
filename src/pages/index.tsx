@@ -1,12 +1,15 @@
+import Carrossel from "../components/templates/Carrossel";
 import Layout from "../components/templates/Layout";
-import useAppData from "../data/hook/useAppData";
+import Navbar from "../components/templates/Navbar";
 
 export default function Home() {
-  const data = useAppData();
   return (
-    <Layout titulo="Titulo" subtitulo="Subtitulo">
-      <h3>Conteúdo</h3>
-      <h3>{data.nome}</h3>
+    <>
+      {/* <Navbar />
+       <Carrossel /> */}
+      <Layout>
+      <Carrossel />
     </Layout>
+    </>
   );
 }
