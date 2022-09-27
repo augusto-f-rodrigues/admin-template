@@ -3,7 +3,7 @@ import Link from "next/link";
 interface MenuItemProps {
   url?: string;
   onClick?: (evento: any) => void;
-  className?: string
+  className?: string;
   title: string;
   icon: any;
 }
@@ -18,9 +18,7 @@ export default function MenuItem(props: MenuItemProps) {
         `}
       >
         {props.icon}
-        <span className={`text-xs font-light`}>
-          {props.title}
-        </span>
+        <span className={`text-xs font-light`}>{props.title}</span>
       </a>
     );
   }

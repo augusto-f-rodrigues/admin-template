@@ -25,22 +25,21 @@ export default function MenuLateral() {
         />
       </div>
       <ul className={`flex-grow`}>
-        <MenuItem title="Início" url="/" icon={IconeCasa()} />
-        <MenuItem title="Capítulos" url="/capitulos" icon={IconeEstudos()} />
-        <MenuItem title="Notificações" url="/notificacoes" icon={IconeSino()} />
-        <MenuItem title="Ajustes" url="/ajustes" icon={IconeEngrenagem()} />
+        <MenuItem title="Início" url="/" icon={IconeCasa} />
+        <MenuItem title="Capítulos" url="/capitulos" icon={IconeEstudos} />
+        <MenuItem title="Notificações" url="/notificacoes" icon={IconeSino} />
+        <MenuItem title="Ajustes" url="/ajustes" icon={IconeEngrenagem} />
       </ul>
       <MenuItem
-        
         title="Login/SignIn"
         url="/autenticacao"
-        icon={IconeLogin()}
+        icon={IconeLogin}
         className="text-green-600 hover:text-white hover:bg-green-500 transition-colors"
       />
       <MenuItem
         onClick={() => console.log("LOGOUT")}
         title="Sair"
-        icon={IconeSair()}
+        icon={IconeSair}
         className="text-red-600 hover:text-white hover:bg-red-500 transition-colors"
       />
     </aside>

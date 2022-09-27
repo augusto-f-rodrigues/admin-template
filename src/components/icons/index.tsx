@@ -1,6 +1,6 @@
-export const IconeCasa = (tamanho = 6) => (
+export const IconeCasa = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -16,9 +16,9 @@ export const IconeCasa = (tamanho = 6) => (
   </svg>
 );
 
-export const IconeEngrenagem = (tamanho = 6) => (
+export const IconeEngrenagem = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -40,9 +40,9 @@ export const IconeEngrenagem = (tamanho = 6) => (
   </svg>
 );
 
-export const IconeSino = (tamanho = 6) => (
+export const IconeSino = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -58,9 +58,9 @@ export const IconeSino = (tamanho = 6) => (
   </svg>
 );
 
-export const IconeSair = (tamanho = 6) => (
+export const IconeSair = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -76,9 +76,9 @@ export const IconeSair = (tamanho = 6) => (
   </svg>
 );
 
-export const IconeEstudos = (tamanho = 6) => (
+export const IconeEstudos = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -95,9 +95,9 @@ export const IconeEstudos = (tamanho = 6) => (
     />
   </svg>
 );
-export const IconeWarning = (tamanho = 6) => (
+export const IconeWarning = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -113,9 +113,9 @@ export const IconeWarning = (tamanho = 6) => (
   </svg>
 );
 
-export const IconeLogin = (tamanho = 6) => (
+export const IconeLogin = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -131,9 +131,9 @@ export const IconeLogin = (tamanho = 6) => (
   </svg>
 );
 
-export const IconeHamburguer = (tamanho = 6) => (
+export const IconeHamburguer = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"
@@ -149,9 +149,9 @@ export const IconeHamburguer = (tamanho = 6) => (
   </svg>
 );
 
-export const IconeX = (tamanho = 6) => (
+export const IconeX = (
   <svg
-    className={`w-${tamanho} h-${tamanho}`}
+    className="w-6 h-6"
     data-darkreader-inline-stroke=""
     fill="none"
     stroke="currentColor"

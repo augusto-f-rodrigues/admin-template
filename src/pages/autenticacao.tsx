@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Carousel } from "react-responsive-carousel";
 import AuthInput from "../components/auth/AuthInput";
 import { IconeWarning } from "../components/icons";
+import Carrossel from "../components/templates/Carrossel";
 import Titulo from "../components/templates/Titulo";
 
 export default function Autorizacao() {
@@ -15,28 +17,29 @@ export default function Autorizacao() {
   const [senha, setSenha] = useState("");
 
   function exibirErro(msg, tempoEmSegundos = 5) {
-    setErro(msg)
-    setTimeout(()=> setErro(null), tempoEmSegundos * 1000)
+    setErro(msg);
+    setTimeout(() => setErro(null), tempoEmSegundos * 1000);
   }
 
   function submeter() {
     if (modo === "login") {
       console.log("login");
-      exibirErro("Informações incorretas de login")
+      exibirErro("Informações incorretas de login");
     } else {
       console.log("cadastrar");
-      exibirErro("Informações incorretas de cadastro")
+      exibirErro("Informações incorretas de cadastro");
     }
   }
 
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="hidden md:block md:w-1/2 lg:w-2/3">
-        <img
+        <Carrossel />
+        {/* <img
           src="https://source.unsplash.com/random"
           alt="imagens-random"
           className="h-screen w-full object-cover"
-        />
+        /> */}
       </div>
       <div className="m-10 w-full md:w-1/2 lg:w-1/3">
         <Titulo
@@ -50,7 +53,7 @@ export default function Autorizacao() {
 
         {erro ? (
           <div className="flex mt-8 mb-8 p-4 bg-red-500 text-white font-semibold border border-red-800 outline-none rounded-lg items-center">
-            {IconeWarning()}
+            {IconeWarning}
             <p className="ml-2">{erro}</p>
           </div>
         ) : (
