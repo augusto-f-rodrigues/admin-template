@@ -11,17 +11,17 @@ import Image from "next/image";
 
 export default function MenuLateral() {
   return (
-    <aside className={`flex flex-col`}>
+    <aside className={`flex flex-col `}>
       <div
         className={`
-      flex flex-col p-2 bg-gray-900 
+      flex flex-col p-2 bg-gray-800
       `}
       >
         <Image
           src="/images/g-logo.png"
           alt="growatt-logo"
           width={50}
-          height={50}
+          height={60}
         />
       </div>
       <ul className={`flex-grow`}>

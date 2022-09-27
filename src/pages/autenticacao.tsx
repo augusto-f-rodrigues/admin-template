@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useState } from "react";
 import AuthInput from "../components/auth/AuthInput";
 import { IconeWarning } from "../components/icons";
-import Button from "../components/templates/Button";
 import Titulo from "../components/templates/Titulo";
 
 export default function Autorizacao() {
