@@ -11,19 +11,14 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className={`flex flex-row`}>
-      <div
-        className={`
-      flex flex-row p-2 bg-gray-800
-      `}
-      >
-        <Image
-          src="/images/g-logo.png"
-          alt="growatt-logo"
-          width={60}
-          height={40}
-        />
-      </div>
+    <nav className={`hidden flex-row sm:flex`}>
+      <Image
+        src={"/images/growatt-logo.png"}
+        alt={"growatt-logo"}
+        height={70}
+        width={140}
+      />
+
       <ul className={`flex flex-row flex-grow`}>
         <MenuItem title="Início" url="/" icon={IconeCasa} />
         <MenuItem title="Capítulos" url="/capitulos" icon={IconeEstudos} />
