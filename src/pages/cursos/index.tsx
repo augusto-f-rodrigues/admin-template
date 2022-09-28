@@ -1,4 +1,4 @@
-import Layout from "../components/templates/Layout";
+import Layout from "../../components/templates/Layout";
 
 export default function Capitulos() {
   return (

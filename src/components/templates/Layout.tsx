@@ -11,7 +11,7 @@ interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   return (
-    <div className={`flex-col h-screen w-screen`}>
+    <div className={`flex-col h-full w-full`}>
       <Navbar />
       <NavbarMobile />
       <div className={`

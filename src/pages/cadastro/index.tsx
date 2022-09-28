@@ -7,8 +7,6 @@ import Carrossel from "../../components/templates/Carrossel";
 import Titulo from "../../components/templates/Titulo";
 
 export default function Autorizacao() {
-  /* const [modo, setModo] = useState<"login" | "cadastro">("login"); */
-
   const [erro, setErro] = useState(null);
 
   const [email, setEmail] = useState("");
@@ -21,13 +19,7 @@ export default function Autorizacao() {
   }
 
   function submeter() {
-    /*  if (modo === "login") {
-      console.log("login");
-      exibirErro("Informações incorretas de login");
-    } else {
-      console.log("cadastrar");
-      exibirErro("Informações incorretas de cadastro");
-    } */
+  
 
     console.log("cadastrar");
     exibirErro("Informações incorretas de cadastro");
@@ -100,7 +92,7 @@ export default function Autorizacao() {
           Entrar com o Google
         </button>
 
-        <p className="mt-8">
+        <p className="mt-5">
           Já faz parte da nossa comunidade?
           <br />
           <Link href={"/login"}>
