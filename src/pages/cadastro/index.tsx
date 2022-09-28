@@ -38,7 +38,7 @@ export default function Autorizacao() {
       <div className="hidden md:block lg:w-2/3 xl:w-4/5">
         <Carrossel />
       </div>
-      <div className="m-10 w-full lg:w-1/3 xl:w-1/5">
+      <div className="m-10 w-full lg:w-1/3 xl:w-1/5 pt-4">
         <Titulo
           titulo="Cadastro"
           subtitulo={"Preencha as informações para se cadastrar"}
@@ -53,7 +53,7 @@ export default function Autorizacao() {
           false
         )}
 
-        <hr className="mt-3 mb-3" />
+        <hr className="mt-0 mb-0" />
 
         <AuthInput
           label="Email"
@@ -109,15 +109,16 @@ export default function Autorizacao() {
             </a>
           </Link>
         </p>
-
-        <Link href={"/"}>
-          <a
-            className="flex flex-row items-center justify-center w-full bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
-            onClick={submeter}
-          >
-            Voltar para Homepage
-          </a>
-        </Link>
+        <div className="pb-4">
+          <Link href={"/"}>
+            <a
+              className="flex flex-row items-center justify-center w-full bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
+              onClick={submeter}
+            >
+              Voltar para Homepage
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );
