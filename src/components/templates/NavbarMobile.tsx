@@ -9,7 +9,7 @@ export default function NavbarMobile() {
           src={"/images/growatt-logo.png"}
           alt={"growatt-logo"}
           height={70}
-          width={140}
+          width={180}
         />
 
         <div className="flex flex-grow justify-end cursor-pointer">
