@@ -2,12 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import AuthInput from "../../components/auth/AuthInput";
-import { IconeWarning } from "../../components/icons";
 import Carrossel from "../../components/templates/Carrossel";
 import Titulo from "../../components/templates/Titulo";
-import {useSession, signIn, signOut} from "next-auth/react"
+import { useSession, signIn } from "next-auth/react";
+import ErroAlert from "../../components/templates/ErrorAlert";
+import { EntrarComGoogle } from "../../components/templates/EntrarComGoogle";
 
-export default function Autorizacao() {
+export default function Login() {
   const [erro, setErro] = useState(null);
 
   const [usuario, setUsuario] = useState("");
@@ -23,8 +24,8 @@ export default function Autorizacao() {
     exibirErro("Informações incorretas de login");
   }
 
-  const {data: session} = useSession()
- 
+  const { data: session } = useSession();
+  console.log(session);
 
   return (
     <div className="flex h-screen items-center justify-center">
@@ -34,14 +35,7 @@ export default function Autorizacao() {
       <div className="m-10 w-full lg:w-1/3 xl:w-1/5">
         <Titulo titulo="Login" subtitulo={"Entre na plataforma:"} />
 
-        {erro ? (
-          <div className="flex mt-8 mb-8 p-4 bg-red-500 text-white font-semibold border border-red-800 outline-none rounded-lg items-center">
-            {IconeWarning}
-            <p className="ml-2">{erro}</p>
-          </div>
-        ) : (
-          false
-        )}
+        {erro ? <ErroAlert msg={erro} /> : false}
 
         <hr className="mt-3 mb-3" />
 
@@ -71,7 +65,7 @@ export default function Autorizacao() {
 
         <button
           className="flex flex-row items-center justify-center w-full bg-red-500 hover:bg-red-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
-          onClick={()=> signIn("google", {callbackUrl: "/"})}
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <Image
             src={"/images/logo-google.svg"}
@@ -81,6 +75,8 @@ export default function Autorizacao() {
           />
           Entrar com o Google
         </button>
+
+        {/* <EntrarComGoogle /> */}
 
         <p className="mt-8">
           Novo por aqui?

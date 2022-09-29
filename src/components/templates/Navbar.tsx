@@ -5,7 +5,6 @@ import {
   IconeLogin,
   IconeLoja,
   IconeSair,
-  IconeSino,
 } from "../icons";
 import MenuItem from "./MenuItem";
 import Image from "next/image";
@@ -14,9 +13,8 @@ import { useSession, signOut } from "next-auth/react";
 export default function Navbar() {
   const { data: session } = useSession();
 
-  console.log(session);
 
-  const userSignIn = () => {
+  const userSign = () => {
     if (session) {
       return (
         <div className="flex flex-row items-center">
@@ -59,13 +57,15 @@ export default function Navbar() {
 
   return (
     <div className="flex justify-center bg-gray-800">
-      <nav className={`hidden flex-row sm:flex items-center w-4/5`}>
-        <div className=" justify-center items-center mr-4 w-fit h-1/2 hidden md:flex">
+      <nav className={`hidden flex-row sm:flex items-center w-11/12`}>
+        <div className=" justify-center items-center mr-4 w-fit h-1/6 hidden md:flex">
+         {/*  <img src="/images/growatt-logo.png" alt="growatt-logo" className="w-fit h-full" /> */}
           <Image
             src={"/images/growatt-logo.png"}
             alt={"growatt-logo"}
             height={70}
             width={180}
+            className={`w-2/3`}
           />
         </div>
 
@@ -105,7 +105,7 @@ export default function Navbar() {
           />
         </ul>
 
-        {userSignIn()}
+        {userSign()}
       </nav>
     </div>
   );

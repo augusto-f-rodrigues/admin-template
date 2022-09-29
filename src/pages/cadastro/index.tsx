@@ -4,6 +4,7 @@ import { useState } from "react";
 import AuthInput from "../../components/auth/AuthInput";
 import { IconeWarning } from "../../components/icons";
 import Carrossel from "../../components/templates/Carrossel";
+import ErroAlert from "../../components/templates/ErrorAlert";
 import Titulo from "../../components/templates/Titulo";
 
 export default function Autorizacao() {
@@ -19,8 +20,6 @@ export default function Autorizacao() {
   }
 
   function submeter() {
-  
-
     console.log("cadastrar");
     exibirErro("Informações incorretas de cadastro");
   }
@@ -36,14 +35,7 @@ export default function Autorizacao() {
           subtitulo={"Preencha as informações para se cadastrar"}
         />
 
-        {erro ? (
-          <div className="flex mt-8 mb-8 p-4 bg-red-500 text-white font-semibold border border-red-800 outline-none rounded-lg items-center">
-            {IconeWarning}
-            <p className="ml-2">{erro}</p>
-          </div>
-        ) : (
-          false
-        )}
+        {erro ? <ErroAlert msg={erro} /> : false}
 
         <hr className="mt-0 mb-0" />
 
@@ -62,6 +54,7 @@ export default function Autorizacao() {
           tipo="username"
           obrigatorio={true}
         />
+
         <AuthInput
           label="Senha"
           valor={senha}
