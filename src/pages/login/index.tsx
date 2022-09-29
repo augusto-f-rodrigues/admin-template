@@ -5,6 +5,7 @@ import AuthInput from "../../components/auth/AuthInput";
 import { IconeWarning } from "../../components/icons";
 import Carrossel from "../../components/templates/Carrossel";
 import Titulo from "../../components/templates/Titulo";
+import {useSession, signIn, signOut} from "next-auth/react"
 
 export default function Autorizacao() {
   const [erro, setErro] = useState(null);
@@ -21,6 +22,9 @@ export default function Autorizacao() {
     console.log("login");
     exibirErro("Informações incorretas de login");
   }
+
+  const {data: session} = useSession()
+ 
 
   return (
     <div className="flex h-screen items-center justify-center">
@@ -67,7 +71,7 @@ export default function Autorizacao() {
 
         <button
           className="flex flex-row items-center justify-center w-full bg-red-500 hover:bg-red-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
-          onClick={submeter}
+          onClick={()=> signIn("google", {callbackUrl: "/"})}
         >
           <Image
             src={"/images/logo-google.svg"}
