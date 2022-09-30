@@ -9,11 +9,13 @@ import Layout from "../../components/templates/Layout";
 import Titulo from "../../components/templates/Titulo";
 
 export default function Cadastro() {
+  const initialValues = { username: "", email: "", senha: "" };
+  const [formValues, setFormValues] = useState(initialValues);
   const [erro, setErro] = useState(null);
 
-  const [email, setEmail] = useState("");
+  /* const [email, setEmail] = useState("");
   const [usuario, setUsuario] = useState("");
-  const [senha, setSenha] = useState("");
+  const [senha, setSenha] = useState(""); */
 
   function exibirErro(msg, tempoEmSegundos = 5) {
     setErro(msg);
@@ -46,36 +48,38 @@ export default function Cadastro() {
 
             <hr className="mt-0 mb-0" />
 
-            <AuthInput
-              label="Email"
-              valor={email}
-              valorMudou={setEmail}
-              tipo="email"
-              obrigatorio={true}
-            />
+            <form >
+              <AuthInput
+                label="Email"
+                valor={formValues.email}
+                valorMudou={setFormValues}
+                tipo="email"
+                obrigatorio={true}
+              />
 
-            <AuthInput
-              label="Usuário"
-              valor={usuario}
-              valorMudou={setUsuario}
-              tipo="username"
-              obrigatorio={true}
-            />
+              <AuthInput
+                label="Usuário"
+                valor={formValues.username}
+                valorMudou={setFormValues}
+                tipo="username"
+                obrigatorio={true}
+              />
 
-            <AuthInput
-              label="Senha"
-              valor={senha}
-              valorMudou={setSenha}
-              tipo="password"
-              obrigatorio={true}
-            />
+              <AuthInput
+                label="Senha"
+                valor={formValues.senha}
+                valorMudou={setFormValues}
+                tipo="password"
+                obrigatorio={true}
+              />
 
-            <button
-              className="flex flex-row items-center justify-center w-full bg-green-500 hover:bg-green-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
-              onClick={submeter}
-            >
-              Cadastrar
-            </button>
+              <button
+                className="flex flex-row items-center justify-center w-full bg-green-500 hover:bg-green-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
+                onClick={submeter}
+              >
+                Cadastrar
+              </button>
+            </form>
 
             <hr className="mt-3 mb-3 w-full" />
 
