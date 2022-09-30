@@ -1,4 +1,5 @@
 import {
+  IconeAdicionarUsuario,
   IconeCasa,
   IconeEngrenagem,
   IconeEstudos,
@@ -46,7 +47,13 @@ export default function Navbar() {
       return (
         <div className="flex flex-row">
           <MenuItem
-            title="Login/SignIn"
+            title="Cadastro"
+            url="/cadastro"
+            icon={IconeAdicionarUsuario}
+            className={` hover:text-green-600`}
+          />
+          <MenuItem
+            title="Login"
             url="/login"
             icon={IconeLogin}
             className="text-green-600 hover:text-white hover:bg-green-500 transition-colors"
