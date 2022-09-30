@@ -5,7 +5,7 @@ import {
   IconeLogin,
   IconeSair,
   IconeSino,
-} from "../icons";
+} from "../../icons";
 import MenuItem from "./MenuItem";
 import Image from "next/image";
 

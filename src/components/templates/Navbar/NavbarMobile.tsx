@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { IconeHamburguer } from "../icons";
-import LogoGrowatt from "./LogoGrowatt";
+import { IconeHamburguer } from "../../icons";
+import LogoGrowatt from "../Logo/LogoGrowatt";
 
 export default function NavbarMobile() {
   return (

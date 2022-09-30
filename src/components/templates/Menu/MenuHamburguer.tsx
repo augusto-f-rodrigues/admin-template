@@ -1,4 +1,4 @@
-import { IconeHamburguer } from "../icons";
+import { IconeHamburguer } from "../../icons";
 
 export default function MenuHamburguer (){
   return(

@@ -1,9 +1,16 @@
+import Head from "next/head";
 import Layout from "../../components/templates/Layout";
 
 export default function Loja() {
   return (
-    <Layout titulo="Loja" subtitulo="Aqui estará a loja">
-      <h3>Conteúdo</h3>
-    </Layout>
+    <>
+      <Head>
+        <title>GAcademy - Loja</title>
+      </Head>
+
+      <Layout titulo="Loja" subtitulo="Aqui estará a loja">
+        <h3>Conteúdo</h3>
+      </Layout>
+    </>
   );
 }

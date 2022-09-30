@@ -1,7 +1,7 @@
 import Cabecalho from "./Cabecalho";
 import Conteudo from "./Conteudo";
-import Navbar from "./Navbar";
-import NavbarMobile from "./NavbarMobile";
+import Navbar from "./Navbar/Navbar";
+import NavbarMobile from "./Navbar/NavbarMobile";
 
 interface LayoutProps {
   titulo?: string;

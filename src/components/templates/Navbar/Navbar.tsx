@@ -6,12 +6,13 @@ import {
   IconeLogin,
   IconeLoja,
   IconeSair,
-} from "../icons";
-import MenuItem from "./MenuItem";
+} from "../../icons";
+import MenuItem from "../Menu/MenuItem";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import LogoGrowatt from "../templates/LogoGrowatt";
+import LogoGrowatt from "../Logo/LogoGrowatt";
+import LogoG from "../Logo/LogoG";
 
 export default function Navbar() {
   const { data: session } = useSession();
@@ -73,12 +74,7 @@ export default function Navbar() {
         </div>
 
         <div className=" justify-center items-center mr-4 w-fit h-7 hidden sm:flex md:hidden">
-          <Image
-            src={"/images/g-logo.png"}
-            alt={"growatt-logo"}
-            height={50}
-            width={50}
-          />
+          <LogoG />
         </div>
 
         <ul className={`flex flex-row flex-grow`}>
