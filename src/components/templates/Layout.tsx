@@ -15,7 +15,7 @@ export default function Layout(props: LayoutProps) {
       <Navbar />
       <NavbarMobile />
       <div className={`
-      flex flex-col w-full h-full bg-gray-300 dark:bg-gray-800
+      flex flex-col w-full h-full  dark:bg-gray-800
       `}>
         <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo} />
         <Conteudo>{props.children}</Conteudo>

@@ -9,10 +9,11 @@ import {
 import MenuItem from "./MenuItem";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
+import LogoGrowatt from "../templates/LogoGrowatt";
 
 export default function Navbar() {
   const { data: session } = useSession();
-
 
   const userSign = () => {
     if (session) {
@@ -58,15 +59,10 @@ export default function Navbar() {
   return (
     <div className="flex justify-center bg-gray-800">
       <nav className={`hidden flex-row sm:flex items-center w-11/12`}>
-        <div className=" justify-center items-center mr-4 w-fit h-1/6 hidden md:flex">
-         {/*  <img src="/images/growatt-logo.png" alt="growatt-logo" className="w-fit h-full" /> */}
-          <Image
-            src={"/images/growatt-logo.png"}
-            alt={"growatt-logo"}
-            height={70}
-            width={180}
-            className={`w-2/3`}
-          />
+        <div className="justify-center items-center mr-4 hidden md:flex cursor-pointer w-48 h-16">
+          <Link href={"/"}>
+            <LogoGrowatt />
+          </Link>
         </div>
 
         <div className=" justify-center items-center mr-4 w-fit h-7 hidden sm:flex md:hidden">
