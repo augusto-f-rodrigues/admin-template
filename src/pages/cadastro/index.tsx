@@ -1,3 +1,4 @@
+import { signIn } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,25 +8,57 @@ import Carrossel from "../../components/templates/Carrossel";
 import ErroAlert from "../../components/templates/ErrorAlert";
 import Layout from "../../components/templates/Layout";
 import Titulo from "../../components/templates/Titulo";
+import validateSenha from "../../middlewares/validateSenha";
+import validateUsuario from "../../middlewares/validateUsuario";
+import validateEmail from "../../middlewares/validateEmail";
+import axios from "axios";
+import conn from "../../../lib/mongodb";
 
 export default function Cadastro() {
-  const initialValues = { username: "", email: "", senha: "" };
-  const [formValues, setFormValues] = useState(initialValues);
   const [erro, setErro] = useState(null);
 
-  /* const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [usuario, setUsuario] = useState("");
-  const [senha, setSenha] = useState(""); */
+  const [senha, setSenha] = useState("");
+  const [confirmaSenha, setConfirmaSenha] = useState("");
+
+  function submeter() {
+    // exibirErro("Informações incorretas de cadastro");
+  }
 
   function exibirErro(msg, tempoEmSegundos = 5) {
     setErro(msg);
     setTimeout(() => setErro(null), tempoEmSegundos * 1000);
   }
 
-  function submeter() {
-    console.log("cadastrar");
-    exibirErro("Informações incorretas de cadastro");
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      validateEmail(email);
+      validateUsuario(usuario);
+      validateSenha(senha, confirmaSenha);
+
+      await axios.post("http://localhost:3000/api/mongodb", {
+        email,
+        usuario,
+        senha,
+      });
+
+      /*  clientPromise.db().collection("users").insertOne({
+        email,
+        usuario,
+        senha,
+      });
+ */
+      /* const response = await axios.post("http://localhost:3000/api/usuario", {
+        email,
+        usuario,
+        senha,
+      }); */
+    } catch (error) {
+      exibirErro(String(error));
+    }
+  };
 
   return (
     <>
@@ -46,29 +79,37 @@ export default function Cadastro() {
 
             {erro ? <ErroAlert msg={erro} /> : false}
 
-            <hr className="mt-0 mb-0" />
+            <hr className="mt-3 mb-3 w-full" />
 
-            <form >
+            <form onSubmit={handleSubmit}>
               <AuthInput
                 label="Email"
-                valor={formValues.email}
-                valorMudou={setFormValues}
+                valor={email}
+                valorMudou={setEmail}
                 tipo="email"
                 obrigatorio={true}
               />
 
               <AuthInput
                 label="Usuário"
-                valor={formValues.username}
-                valorMudou={setFormValues}
+                valor={usuario}
+                valorMudou={setUsuario}
                 tipo="username"
                 obrigatorio={true}
               />
 
               <AuthInput
                 label="Senha"
-                valor={formValues.senha}
-                valorMudou={setFormValues}
+                valor={senha}
+                valorMudou={setSenha}
+                tipo="password"
+                obrigatorio={true}
+              />
+
+              <AuthInput
+                label="Confirme a Senha"
+                valor={confirmaSenha}
+                valorMudou={setConfirmaSenha}
                 tipo="password"
                 obrigatorio={true}
               />
@@ -85,7 +126,7 @@ export default function Cadastro() {
 
             <button
               className="flex flex-row items-center justify-center w-full bg-red-500 hover:bg-red-600 px-3 py-2 rounded-lg font-bold text-white transition-colors mt-3"
-              onClick={submeter}
+              onClick={() => signIn("google", { callbackUrl: "/" })}
             >
               <Image
                 src={"/images/logo-google.svg"}

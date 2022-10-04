@@ -10,7 +10,6 @@ import {
 import MenuItem from "../Menu/MenuItem";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
-import Link from "next/link";
 import LogoGrowatt from "../Logo/LogoGrowatt";
 import LogoG from "../Logo/LogoG";
 
@@ -68,9 +67,7 @@ export default function Navbar() {
     <div className="flex justify-center bg-gray-800">
       <nav className={`hidden flex-row sm:flex items-center w-11/12`}>
         <div className="justify-center items-center mr-4 hidden md:flex cursor-pointer w-48 h-16">
-          <Link href={"/"}>
-            <LogoGrowatt />
-          </Link>
+          <LogoGrowatt />
         </div>
 
         <div className=" justify-center items-center mr-4 w-fit h-7 hidden sm:flex md:hidden">
@@ -90,12 +87,6 @@ export default function Navbar() {
             icon={IconeEstudos}
             className={` hover:text-green-600`}
           />
-          {/* <MenuItem
-            title="Notificações"
-            url="/notificacoes"
-            icon={IconeSino}
-            className={` hover:text-green-600`}
-          /> */}
           <MenuItem
             title="Loja"
             url="/loja"
@@ -103,7 +94,6 @@ export default function Navbar() {
             className={` hover:text-green-600`}
           />
         </ul>
-
         {userSign()}
       </nav>
     </div>

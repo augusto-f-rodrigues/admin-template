@@ -15,18 +15,17 @@ export default function Login() {
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
 
-  function exibirErro(msg, tempoEmSegundos = 5) {
-    setErro(msg);
-    setTimeout(() => setErro(null), tempoEmSegundos * 1000);
-  }
-
   function submeter() {
     console.log("login");
     exibirErro("Informações incorretas de login");
   }
 
-  const { data: session } = useSession();
-  console.log(session);
+  function exibirErro(msg, tempoEmSegundos = 5) {
+    setErro(msg);
+    setTimeout(() => setErro(null), tempoEmSegundos * 1000);
+  }
+  /*  const { data: session } = useSession();
+  console.log(session); */
 
   return (
     <>

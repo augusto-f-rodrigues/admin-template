@@ -6,7 +6,7 @@ export default function Carrossel() {
     <Carousel
       autoPlay={true}
       showThumbs={false}
-      interval={2000}
+      interval={5000}
       showArrows={false}
       showIndicators={false}
       showStatus={false}
