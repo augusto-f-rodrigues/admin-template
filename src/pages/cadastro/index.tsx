@@ -38,18 +38,20 @@ export default function Cadastro() {
       validateUsuario(usuario);
       validateSenha(senha, confirmaSenha);
 
-      await axios.post("http://localhost:3000/api/mongodb", {
+      const response = await axios.post("http://localhost:3001/user/add", {
         email,
         usuario,
         senha,
       });
+
+      console.log(response)
 
       /*  clientPromise.db().collection("users").insertOne({
         email,
         usuario,
         senha,
       });
- */
+      */
       /* const response = await axios.post("http://localhost:3000/api/usuario", {
         email,
         usuario,

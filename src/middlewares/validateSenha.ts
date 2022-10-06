@@ -7,7 +7,6 @@ export default function Validatepassword(password, confirmPassword) {
   const regexSpecialSymbol = /(?=.*[$*&@#])/;
   const min8caracteres = /[0-9a-zA-Z$*&@#]{8,}/;
 
-  console.log(password);
 
    if (!regexOneDigit.test(password)) {
     throw new Error("A senha deve ter ao menos um numero");
