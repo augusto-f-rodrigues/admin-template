@@ -42,23 +42,11 @@ export default function Cadastro() {
         email,
         usuario,
         senha,
-      });
+      })
 
       console.log(response)
-
-      /*  clientPromise.db().collection("users").insertOne({
-        email,
-        usuario,
-        senha,
-      });
-      */
-      /* const response = await axios.post("http://localhost:3000/api/usuario", {
-        email,
-        usuario,
-        senha,
-      }); */
     } catch (error) {
-      exibirErro(String(error));
+      exibirErro(String(error.response.data.message));
     }
   };
 
